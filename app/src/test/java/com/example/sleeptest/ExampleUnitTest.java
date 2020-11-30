@@ -1,4 +1,4 @@
-package com.example.sleepsmart;
+package com.example.sleeptest;
 
 import org.junit.Test;
 
