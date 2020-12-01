@@ -19,6 +19,9 @@
 
         <activity android:name=".profile"></activity>
         <activity android:name=".alarm"></activity>
+
+        <receiver android:name=".AlertReceiver"/>
+
     </application>
 
 </manifest>

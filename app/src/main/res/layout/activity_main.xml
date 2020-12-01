@@ -37,7 +37,7 @@
         app:layout_constraintTop_toBottomOf="@+id/BsetAlarm" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/SleepSmartMain"
         android:layout_width="168dp"
         android:layout_height="51dp"
         android:layout_marginStart="122dp"
@@ -64,9 +64,9 @@
         android:layout_marginRight="147dp"
         android:layout_marginBottom="40dp"
         android:onClick="alarmClick"
-        android:text="Set Alarm"
+        android:text="Alarm"
         app:layout_constraintBottom_toTopOf="@+id/button4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/SleepSmartMain" />
 </androidx.constraintlayout.widget.ConstraintLayout>
