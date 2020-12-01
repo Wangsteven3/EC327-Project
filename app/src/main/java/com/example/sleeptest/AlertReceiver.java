@@ -12,7 +12,7 @@ public class AlertReceiver extends BroadcastReceiver {
     public void onReceive(Context context, Intent intent) {
 
         Notification notification = new Notification(context);
-        NotificationCompat.Builder noteBook = notification.getChannelNotification();
-        notification.getManager().notify(1, noteBook.build());
+        NotificationCompat.Builder nb = notification.getChannelNotification();
+        notification.getManager().notify(1, nb.build());
     }
 }
