@@ -41,9 +41,10 @@ public class Notification extends ContextWrapper {
     }
 
     public NotificationCompat.Builder getChannelNotification() {
-        
-        return new NotificationCompat.Builder(getApplicationContext(), alertID).setContentTitle("Sleep Smart").setContentText("It's time for your test!");
-        //.setSmallIcon(R.drawable.ic_android);
+
+        return new NotificationCompat.Builder(getApplicationContext(), alertID)
+                .setContentTitle("Sleep Smart").setContentText("It's time for your test!")
+                .setSmallIcon(R.drawable.ic_alarm);
 
     }
 
