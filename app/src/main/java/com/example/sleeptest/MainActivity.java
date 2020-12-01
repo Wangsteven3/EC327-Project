@@ -1,10 +1,10 @@
 package com.example.sleeptest;
 
-import androidx.appcompat.app.AppCompatActivity;
-
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.content.Intent;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    public void alarmClick(View v) { //button click listener for profile
+    public void alarmClick(View v) { //button click listener for alarm button in profile
 
         if(v.getId() == R.id.BsetAlarm) {
 
