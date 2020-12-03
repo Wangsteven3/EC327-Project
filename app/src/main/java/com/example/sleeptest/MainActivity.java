@@ -9,12 +9,12 @@ import androidx.appcompat.app.AppCompatActivity;
 public class MainActivity extends AppCompatActivity {
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) { //activity_main xml (home page)
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
 
-    public void onButtonClick(View v) { //button click listener for profile
+    public void onButtonClick(View v) { //button click listener for profile, direct the home page to profile page
 
         if(v.getId() == R.id.Bprofile) {
 
@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    public void alarmClick(View v) { //button click listener for alarm button in profile
+    public void alarmClick(View v) { //button click listener for alarm button in profile, direct the home page to alarm page
 
         if(v.getId() == R.id.BsetAlarm) {
 

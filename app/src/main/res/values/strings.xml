@@ -1,3 +1,4 @@
+<!-- change app name -->
 <resources>
-    <string name="app_name">SleepTest</string>
+    <string name="app_name">SleepSmart</string>
 </resources>
