@@ -72,7 +72,7 @@ public class alarm extends AppCompatActivity implements TimePickerDialog.OnTimeS
 
     private void updateTimeText(Calendar currentTime) { //Change the Alarm inactive text to the time set on the alarm
 
-        String timeText = "Alarm set: ";
+        String timeText = "Set: ";
         timeText += DateFormat.getTimeInstance(DateFormat.SHORT).format(currentTime.getTime());
 
         TextView textView = (TextView)findViewById(R.id.textView);
@@ -101,7 +101,7 @@ public class alarm extends AppCompatActivity implements TimePickerDialog.OnTimeS
 
         alarmManager.cancel(pendingIntent); //cancel alarm
         TextView textView = (TextView)findViewById(R.id.textView); //set textView label to alarm off
-        textView.setText("Alarm Off");
+        textView.setText("Alarm Inactive");
 
     }
 
