@@ -20,6 +20,13 @@
         <!-- define profile and alarm activity -->
         <activity android:name=".profile"></activity>
         <activity android:name=".alarm"></activity>
+        <activity android:name=".Simon"></activity>
+        <activity android:name=".gamemenu"></activity>
+        <activity android:name=".memory2"></activity>
+        <activity android:name=".memory3"></activity>
+        <activity android:name=".memory4">
+
+        </activity>
 
         <!-- define alert receiver -->
         <receiver android:name=".AlertReceiver"/>

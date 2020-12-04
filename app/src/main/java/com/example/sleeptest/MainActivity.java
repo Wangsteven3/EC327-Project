@@ -37,4 +37,15 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    public void play(View v) { //button click listener for alarm button in profile, direct the home page to alarm page
+
+        if(v.getId() == R.id.choice) {
+
+            Intent i = new Intent(MainActivity.this, gamemenu.class);
+            startActivity(i);
+
+        }
+
+    }
+
 }
