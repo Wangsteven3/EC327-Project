@@ -20,6 +20,7 @@
         <!-- define profile and alarm activity -->
         <activity android:name=".profile"></activity>
         <activity android:name=".alarm"></activity>
+
         <activity android:name=".Simon"></activity>
         <activity android:name=".gamemenu"></activity>
         <activity android:name=".memory2"></activity>
