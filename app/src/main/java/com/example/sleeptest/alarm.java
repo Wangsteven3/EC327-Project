@@ -17,11 +17,13 @@ import androidx.fragment.app.DialogFragment;
 import java.text.DateFormat;
 import java.util.Calendar;
 
-//source: Coding in Flow tutorial with Alarm Manager
+//Resources I used to understand how to use built in android alarm system and time dialog widget
+// Coding in Flow tutorial w/ Alarm Manager
+// developer.android.com/reference/android/app/AlarmManager
+// Types of customization to Android Clock intent on YouTube
 
 public class alarm extends AppCompatActivity implements TimePickerDialog.OnTimeSetListener {
 
-//    private TextView textView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,8 +41,8 @@ public class alarm extends AppCompatActivity implements TimePickerDialog.OnTimeS
         }
     }
 
-                // @Override
                 public void alarmSet(View v) { //button to open alarm dialog
+
                     DialogFragment timePick = new TimePicker();
                     timePick.show(getSupportFragmentManager(), "Time Picker");
 
@@ -62,8 +64,8 @@ public class alarm extends AppCompatActivity implements TimePickerDialog.OnTimeS
         currentTime.set(Calendar.MINUTE, minute);
         currentTime.set(Calendar.SECOND, 0);
 
-//        TextView textView = (TextView)findViewById(R.id.textView);
-//        textView.setText("Hour: " + hourOfDay + " Minute: " + minute);
+//      TextView textView = (TextView)findViewById(R.id.textView);         test cases from previous without the alarmManager setup
+//      textView.setText("Hour: " + hourOfDay + " Minute: " + minute);
 
         updateTimeText(currentTime);
         startAlarm(currentTime);
@@ -72,11 +74,11 @@ public class alarm extends AppCompatActivity implements TimePickerDialog.OnTimeS
 
     private void updateTimeText(Calendar currentTime) { //Change the Alarm inactive text to the time set on the alarm
 
-        String timeText = "Set: ";
-        timeText += DateFormat.getTimeInstance(DateFormat.SHORT).format(currentTime.getTime());
+        String timeTextView = "Set: "; //set time textView
+        timeTextView += DateFormat.getTimeInstance(DateFormat.SHORT).format(currentTime.getTime());
 
         TextView textView = (TextView)findViewById(R.id.textView);
-        textView.setText(timeText);
+        textView.setText(timeTextView);
 
     }
 
@@ -85,10 +87,10 @@ public class alarm extends AppCompatActivity implements TimePickerDialog.OnTimeS
     private void startAlarm(Calendar currentTime) { // function to start alarm using alarm manager
 
         AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
-        Intent intent = new Intent(this, AlertReceiver.class); //start a new intent for alarm
-        PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 1, intent, 0);
+        Intent intent = new Intent(this, AlertReceiver.class); //start a new intent to start alarm
+        PendingIntent pending = PendingIntent.getBroadcast(this, 1, intent, 0);
 
-            alarmManager.setExact(AlarmManager.RTC_WAKEUP, currentTime.getTimeInMillis(), pendingIntent);
+            alarmManager.setExact(AlarmManager.RTC_WAKEUP, currentTime.getTimeInMillis(), pending);
 
     }
 
@@ -96,10 +98,10 @@ public class alarm extends AppCompatActivity implements TimePickerDialog.OnTimeS
     private void cancelAlarm() { //function to cancel alarm, need to copy the same exact alarm in order to cancel
 
         AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
-        Intent intent = new Intent(this, AlertReceiver.class);
-        PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 1, intent, 0);
+        Intent alarmOff = new Intent(this, AlertReceiver.class);
+        PendingIntent pending = PendingIntent.getBroadcast(this, 1, alarmOff, 0);
 
-        alarmManager.cancel(pendingIntent); //cancel alarm
+        alarmManager.cancel(pending); //cancel alarm
         TextView textView = (TextView)findViewById(R.id.textView); //set textView label to alarm off
         textView.setText("Alarm Inactive");
 

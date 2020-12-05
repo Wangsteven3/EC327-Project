@@ -6,6 +6,9 @@ import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+//Resources: Use developer.android.com/training/basics/firstapp/starting-activity as reference for setting up activity
+// as well as their Intent and layout for xml editing
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
