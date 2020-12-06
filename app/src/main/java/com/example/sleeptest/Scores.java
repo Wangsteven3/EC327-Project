@@ -24,10 +24,10 @@ public class Scores {
     }
 
     public void setDateTime(String dateTime) { this.dateTime = dateTime; }
-    public void setMemoryScore(int totalScore) { this.totalScore = totalScore; }
+    public void setTotalScore(int totalScore) { this.totalScore = totalScore; }
 
 
     public int getId() { return id; }
     public String getDateTime() { return dateTime; }
-    public int getMemoryScore() { return totalScore; }
+    public int getTotalScore() { return totalScore; }
 }
