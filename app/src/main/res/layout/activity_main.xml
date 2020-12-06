@@ -38,8 +38,7 @@
         app:icon="@drawable/ic_play_arrow"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/BsetAlarm" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/SleepSmartMain"
@@ -82,18 +81,19 @@
         android:layout_height="116dp"
         android:layout_marginStart="275dp"
         android:layout_marginLeft="275dp"
+        android:layout_marginTop="30dp"
         android:layout_marginEnd="20dp"
         android:layout_marginRight="20dp"
+
         android:background="#3CFFFFFF"
         android:drawableTop="@drawable/ic_pepehappy"
-
         android:drawablePadding="-2dp"
         android:onClick="onButtonClick"
         android:orientation="vertical"
         android:paddingLeft="-10dp"
+
         android:paddingTop="-500dp"
         android:paddingRight="-10dp"
-
         android:paddingBottom="-10dp"
         android:singleLine="true"
         android:text="Profile"
@@ -103,8 +103,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:rippleColor="#FFFFFF"
-        tools:layout_editor_absoluteY="42dp" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:rippleColor="#FFFFFF" />
     <!-- android:background="@android:color/transparent"-->
 
 

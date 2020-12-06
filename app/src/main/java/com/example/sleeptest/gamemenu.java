@@ -1,11 +1,13 @@
 package com.example.sleeptest;
 
 import android.content.Intent;
+import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 public class gamemenu extends AppCompatActivity {
 
@@ -13,6 +15,13 @@ public class gamemenu extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) { //activity_main xml (home page)
         super.onCreate(savedInstanceState);
         setContentView(R.layout.gamemenu);
+
+        //gradient background animation
+        ConstraintLayout app = findViewById(R.id.gameMenuLayout);
+        AnimationDrawable gradientBackground = (AnimationDrawable) app.getBackground();
+        gradientBackground.setEnterFadeDuration(1000);
+        gradientBackground.setExitFadeDuration(3000);
+        gradientBackground.start();
 
         Button memorytwo = (Button) findViewById(R.id.choice2);
         Button Simon = (Button) findViewById(R.id.choice1);

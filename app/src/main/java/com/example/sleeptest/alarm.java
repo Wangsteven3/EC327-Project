@@ -5,6 +5,7 @@ import android.app.PendingIntent;
 import android.app.TimePickerDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.drawable.AnimationDrawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
@@ -12,6 +13,7 @@ import android.widget.TextView;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.DialogFragment;
 
 import java.text.DateFormat;
@@ -30,6 +32,13 @@ public class alarm extends AppCompatActivity implements TimePickerDialog.OnTimeS
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.alarm); //alarm xml
+
+        //gradient background animation
+        ConstraintLayout app = findViewById(R.id.alarmLayout);
+        AnimationDrawable gradientBackground = (AnimationDrawable) app.getBackground();
+        gradientBackground.setEnterFadeDuration(1000);
+        gradientBackground.setExitFadeDuration(3000);
+        gradientBackground.start();
 
     }
 
