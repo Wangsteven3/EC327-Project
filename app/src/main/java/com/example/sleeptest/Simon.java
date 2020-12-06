@@ -15,6 +15,8 @@ import org.w3c.dom.Text;
 
 import java.lang.*;
 import java.util.Random;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class Simon extends AppCompatActivity {
 
@@ -71,8 +73,8 @@ public class Simon extends AppCompatActivity {
 
         for (int i = 0; i < 6; i++) { //red = 0, green = 1, yellow = 2, blue = 3
             int var = sequence[i];
-            new java.util.Timer().schedule( //plays sequence and color with delay in order
-                    new java.util.TimerTask() {
+            new Timer().schedule( //plays sequence and color with delay in order
+                    new TimerTask() {
                         @Override
                         public void run() {
                             redbtn.setBackgroundColor(Color.parseColor("#9E0E0E")); //0
@@ -80,8 +82,8 @@ public class Simon extends AppCompatActivity {
                             yellowbtn.setBackgroundColor(Color.parseColor("#8F8108")); //2
                             bluebtn.setBackgroundColor(Color.parseColor("#072583")); //3
 
-                            new java.util.Timer().schedule(
-                                    new java.util.TimerTask() {
+                            new Timer().schedule(
+                                    new TimerTask() {
                                         @Override
                                         public void run() {
                                             if (var == 0) {
@@ -153,8 +155,8 @@ public class Simon extends AppCompatActivity {
             test.setText(order);
 */
 
-        new java.util.Timer().schedule( //sets back to base colors after sequence play
-                new java.util.TimerTask() {
+        new Timer().schedule( //sets back to base colors after sequence play
+                new TimerTask() {
                     @Override
                     public void run() {
                         redbtn.setBackgroundColor(Color.parseColor("#9E0E0E"));
