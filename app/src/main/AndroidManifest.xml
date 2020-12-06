@@ -30,7 +30,7 @@
         <activity android:name=".Simonb"></activity>
         <activity android:name=".memory4"></activity>
         <activity android:name=".scorepage"></activity>
-        <activity android:name=".math"></activity>
+        <activity android:name=".Math"></activity>
 
         <!-- define alert receiver -->
         <receiver android:name=".AlertReceiver"/>

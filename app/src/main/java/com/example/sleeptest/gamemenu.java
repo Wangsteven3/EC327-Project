@@ -19,6 +19,7 @@ public class gamemenu extends AppCompatActivity {
         Button memorythree = (Button) findViewById(R.id.choice3);
         Button memoryfour = (Button) findViewById(R.id.choice4);
         Button math = (Button) findViewById(R.id.choice5);
+
         memorytwo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
