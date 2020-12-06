@@ -27,8 +27,10 @@ public class alarm extends AppCompatActivity implements TimePickerDialog.OnTimeS
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.alarm); //alarm xml
+
     }
 
     public void returnClick(View v) { //button click listener for alarm page menu button, direct alarm page back to menu

@@ -9,8 +9,10 @@ public class profile extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) { //profile xml
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.profile); //profile xml
+
     }
 
     public void MenuClick(View v) { //button click listener for profile page menu button
