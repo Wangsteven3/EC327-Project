@@ -11,18 +11,12 @@ public class Scores {
     private int id;
     @ColumnInfo(name = "date_time")
     private String dateTime;
-    @ColumnInfo(name = "memory_score")
-    private int memoryScore;
-    @ColumnInfo(name = "simon_score")
-    private int simonScore;
-    @ColumnInfo(name = "math_score")
-    private int mathScore;
+    @ColumnInfo(name = "Total Score")
+    private int totalScore;
 
-    public Scores(String dateTime, int memoryScore, int simonScore, int mathScore) {
+    public Scores(String dateTime, int totalScore) {
         this.dateTime = dateTime;
-        this.memoryScore = memoryScore;
-        this.simonScore = simonScore;
-        this.mathScore = mathScore;
+        this.totalScore = totalScore;
     }
 
     public void setId(int id) {
@@ -30,14 +24,10 @@ public class Scores {
     }
 
     public void setDateTime(String dateTime) { this.dateTime = dateTime; }
-    public void setMemoryScore(int memoryScore) { this.memoryScore = memoryScore; }
-    public void setSimonScore(int simonScore) { this.simonScore = simonScore; }
-    public void setMathScore(int mathScore) {this.mathScore = mathScore;}
+    public void setMemoryScore(int totalScore) { this.totalScore = totalScore; }
 
 
     public int getId() { return id; }
     public String getDateTime() { return dateTime; }
-    public int getMemoryScore() { return memoryScore; }
-    public int getSimonScore() { return simonScore; }
-    public int getMathScore() { return mathScore; }
+    public int getMemoryScore() { return totalScore; }
 }
