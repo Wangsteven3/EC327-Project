@@ -16,14 +16,14 @@ import java.util.Random;
 
 
 
-public class memory4 extends AppCompatActivity {
+public class memory4b extends AppCompatActivity {
     Random rand = new Random(); //we have the random class
     short redcounter, greencounter, bluecounter, yellowcounter, j = 0, accurate =0, incorrect=0, b1click =1, b2click = 1, b3click = 1, b4click = 1, b5click = 1, b6click = 1, b7click = 1,
-            b8click = 1, b9click =1, b10click = 1, b11click = 1, b12click = 1, b13click = 1, b14click = 1, b15click =1, b16click = 1, totalrightsquares;
+            b8click = 1, b9click =1, b10click = 1, b11click = 1, b12click = 1, b13click = 1, b14click = 1, b15click =1, b16click = 1, totalrightsquares, submitted = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.memory4);
+        setContentView(R.layout.memory4b);
         //creation of the buttons
 
         //Declaration of variables
@@ -71,9 +71,7 @@ public class memory4 extends AppCompatActivity {
         Button fourteen = (Button) findViewById(R.id.button14);
         Button fifteen = (Button) findViewById(R.id.button15);
         Button sixteen = (Button) findViewById(R.id.button16);
-        Button repeat = (Button) findViewById(R.id.reapeat3);
 
-        Button back = (Button) findViewById(R.id.main);
         Button submission = (Button) findViewById(R.id.answer);
         TextView prompt = (TextView) findViewById(R.id.textView2);
 
@@ -812,246 +810,238 @@ public class memory4 extends AppCompatActivity {
                 prompt.setText(prompt1); //sets the textbox
 
                 //bring back the colors
-                if(b1 == 0) {
+                if (b1 == 0) {
                     one.setBackgroundColor(Color.parseColor("#FF0000")); //red
                 }
-                if(b1 == 1) {
+                if (b1 == 1) {
                     one.setBackgroundColor(Color.parseColor("#04A104")); //green
                 }
-                if(b1 == 2) {
+                if (b1 == 2) {
                     one.setBackgroundColor(Color.parseColor("#0573FB")); //blue
                 }
-                if(b1 == 3) {
+                if (b1 == 3) {
                     one.setBackgroundColor(Color.parseColor("#F3FB05")); //yellow
                 }
 
 
-
-                if(b2 == 0) {
+                if (b2 == 0) {
                     two.setBackgroundColor(Color.parseColor("#FF0000"));
                 }
-                if(b2 == 1) {
+                if (b2 == 1) {
                     two.setBackgroundColor(Color.parseColor("#04A104"));
                 }
-                if(b2 == 2) {
+                if (b2 == 2) {
                     two.setBackgroundColor(Color.parseColor("#0573FB"));
                 }
-                if(b2 == 3) {
+                if (b2 == 3) {
                     two.setBackgroundColor(Color.parseColor("#F3FB05"));
                 }
 
 
-
-                if(b3 == 0) {
+                if (b3 == 0) {
                     three.setBackgroundColor(Color.parseColor("#FF0000"));
                 }
-                if(b3 == 1) {
+                if (b3 == 1) {
                     three.setBackgroundColor(Color.parseColor("#04A104"));
                 }
-                if(b3 == 2) {
+                if (b3 == 2) {
                     three.setBackgroundColor(Color.parseColor("#0573FB"));
                 }
-                if(b3 == 3) {
+                if (b3 == 3) {
                     three.setBackgroundColor(Color.parseColor("#F3FB05"));
                 }
 
 
-
-                if(b4 == 0) {
+                if (b4 == 0) {
                     four.setBackgroundColor(Color.parseColor("#FF0000"));
                 }
-                if(b4 == 1) {
+                if (b4 == 1) {
                     four.setBackgroundColor(Color.parseColor("#04A104"));
                 }
-                if(b4 == 2) {
+                if (b4 == 2) {
                     four.setBackgroundColor(Color.parseColor("#0573FB"));
                 }
-                if(b4 == 3) {
+                if (b4 == 3) {
                     four.setBackgroundColor(Color.parseColor("#F3FB05"));
                 }
 
 
-                if(b5 == 0) {
+                if (b5 == 0) {
                     five.setBackgroundColor(Color.parseColor("#FF0000"));
                 }
-                if(b5 == 1) {
+                if (b5 == 1) {
                     five.setBackgroundColor(Color.parseColor("#04A104"));
                 }
-                if(b5 == 2) {
+                if (b5 == 2) {
                     five.setBackgroundColor(Color.parseColor("#0573FB"));
                 }
-                if(b5 == 3) {
+                if (b5 == 3) {
                     five.setBackgroundColor(Color.parseColor("#F3FB05"));
                 }
 
-                if(b6 == 0) {
+                if (b6 == 0) {
                     six.setBackgroundColor(Color.parseColor("#FF0000"));
                 }
-                if(b6 == 1) {
+                if (b6 == 1) {
                     six.setBackgroundColor(Color.parseColor("#04A104"));
                 }
-                if(b6 == 2) {
+                if (b6 == 2) {
                     six.setBackgroundColor(Color.parseColor("#0573FB"));
                 }
-                if(b6 == 3) {
+                if (b6 == 3) {
                     six.setBackgroundColor(Color.parseColor("#F3FB05"));
                 }
 
-                if(b7 == 0) {
+                if (b7 == 0) {
                     seven.setBackgroundColor(Color.parseColor("#FF0000"));
                 }
-                if(b7 == 1) {
+                if (b7 == 1) {
                     seven.setBackgroundColor(Color.parseColor("#04A104"));
                 }
-                if(b7 == 2) {
+                if (b7 == 2) {
                     seven.setBackgroundColor(Color.parseColor("#0573FB"));
                 }
-                if(b7 == 3) {
+                if (b7 == 3) {
                     seven.setBackgroundColor(Color.parseColor("#F3FB05"));
                 }
 
-                if(b8 == 0) {
+                if (b8 == 0) {
                     eight.setBackgroundColor(Color.parseColor("#FF0000"));
                 }
-                if(b8 == 1) {
+                if (b8 == 1) {
                     eight.setBackgroundColor(Color.parseColor("#04A104"));
                 }
-                if(b8 == 2) {
+                if (b8 == 2) {
                     eight.setBackgroundColor(Color.parseColor("#0573FB"));
                 }
-                if(b8 == 3) {
+                if (b8 == 3) {
                     eight.setBackgroundColor(Color.parseColor("#F3FB05"));
                 }
 
-                if(b9 == 0) {
+                if (b9 == 0) {
                     nine.setBackgroundColor(Color.parseColor("#FF0000"));
                 }
-                if(b9 == 1) {
+                if (b9 == 1) {
                     nine.setBackgroundColor(Color.parseColor("#04A104"));
                 }
-                if(b9 == 2) {
+                if (b9 == 2) {
                     nine.setBackgroundColor(Color.parseColor("#0573FB"));
                 }
-                if(b9 == 3) {
+                if (b9 == 3) {
                     nine.setBackgroundColor(Color.parseColor("#F3FB05"));
                 }
-                if(b10 == 0) {
+                if (b10 == 0) {
                     ten.setBackgroundColor(Color.parseColor("#FF0000")); //red
                 }
-                if(b10 == 1) {
+                if (b10 == 1) {
                     ten.setBackgroundColor(Color.parseColor("#04A104")); //green
                 }
-                if(b10 == 2) {
+                if (b10 == 2) {
                     ten.setBackgroundColor(Color.parseColor("#0573FB")); //blue
                 }
-                if(b10 == 3) {
+                if (b10 == 3) {
                     ten.setBackgroundColor(Color.parseColor("#F3FB05")); //yellow
                 }
 
-                if(b11 == 0) {
+                if (b11 == 0) {
                     eleven.setBackgroundColor(Color.parseColor("#FF0000")); //red
                 }
-                if(b11 == 1) {
+                if (b11 == 1) {
                     eleven.setBackgroundColor(Color.parseColor("#04A104")); //green
                 }
-                if(b11 == 2) {
+                if (b11 == 2) {
                     eleven.setBackgroundColor(Color.parseColor("#0573FB")); //blue
                 }
-                if(b11 == 3) {
+                if (b11 == 3) {
                     eleven.setBackgroundColor(Color.parseColor("#F3FB05")); //yellow
                 }
 
-                if(b12 == 0) {
+                if (b12 == 0) {
                     twelve.setBackgroundColor(Color.parseColor("#FF0000")); //red
                 }
-                if(b12 == 1) {
+                if (b12 == 1) {
                     twelve.setBackgroundColor(Color.parseColor("#04A104")); //green
                 }
-                if(b12 == 2) {
+                if (b12 == 2) {
                     twelve.setBackgroundColor(Color.parseColor("#0573FB")); //blue
                 }
-                if(b12 == 3) {
+                if (b12 == 3) {
                     twelve.setBackgroundColor(Color.parseColor("#F3FB05")); //yellow
                 }
 
-                if(b13 == 0) {
+                if (b13 == 0) {
                     thirteen.setBackgroundColor(Color.parseColor("#FF0000")); //red
                 }
-                if(b13 == 1) {
+                if (b13 == 1) {
                     thirteen.setBackgroundColor(Color.parseColor("#04A104")); //green
                 }
-                if(b13 == 2) {
+                if (b13 == 2) {
                     thirteen.setBackgroundColor(Color.parseColor("#0573FB")); //blue
                 }
-                if(b13 == 3) {
+                if (b13 == 3) {
                     thirteen.setBackgroundColor(Color.parseColor("#F3FB05")); //yellow
                 }
 
-                if(b14 == 0) {
+                if (b14 == 0) {
                     fourteen.setBackgroundColor(Color.parseColor("#FF0000")); //red
                 }
-                if(b14 == 1) {
+                if (b14 == 1) {
                     fourteen.setBackgroundColor(Color.parseColor("#04A104")); //green
                 }
-                if(b14 == 2) {
+                if (b14 == 2) {
                     fourteen.setBackgroundColor(Color.parseColor("#0573FB")); //blue
                 }
-                if(b14 == 3) {
+                if (b14 == 3) {
                     fourteen.setBackgroundColor(Color.parseColor("#F3FB05")); //yellow
                 }
 
-                if(b15 == 0) {
+                if (b15 == 0) {
                     fifteen.setBackgroundColor(Color.parseColor("#FF0000")); //red
                 }
-                if(b15 == 1) {
+                if (b15 == 1) {
                     fifteen.setBackgroundColor(Color.parseColor("#04A104")); //green
                 }
-                if(b15 == 2) {
+                if (b15 == 2) {
                     fifteen.setBackgroundColor(Color.parseColor("#0573FB")); //blue
                 }
-                if(b15 == 3) {
+                if (b15 == 3) {
                     fifteen.setBackgroundColor(Color.parseColor("#F3FB05")); //yellow
                 }
 
-                if(b16 == 0) {
+                if (b16 == 0) {
                     sixteen.setBackgroundColor(Color.parseColor("#FF0000")); //red
                 }
-                if(b16 == 1) {
+                if (b16 == 1) {
                     sixteen.setBackgroundColor(Color.parseColor("#04A104")); //green
                 }
-                if(b16 == 2) {
+                if (b16 == 2) {
                     sixteen.setBackgroundColor(Color.parseColor("#0573FB")); //blue
                 }
-                if(b16 == 3) {
+                if (b16 == 3) {
                     sixteen.setBackgroundColor(Color.parseColor("#F3FB05")); //yellow
                 }
 
+                if (submitted == 0) {
+                    float[] scorearray;
+                    Bundle extras = getIntent().getExtras();
+                    scorearray = extras.getFloatArray("score");
+                    scorearray[2] = (float) (accurate - incorrect) / totalrightsquares;
+                    submitted++;
 
-
-
+                    new java.util.Timer().schedule(
+                            new java.util.TimerTask() {
+                                @Override
+                                public void run() {
+                                    Intent i = new Intent(getApplicationContext(), Simonb.class);
+                                    i.putExtra("score", scorearray);
+                                    startActivity(i);
+                                }
+                            },
+                            2000
+                    );
+                }
             }
         });
-
-
-        back.setOnClickListener(new View.OnClickListener() { //sends you back the home +
-            @Override
-            public void onClick(View v) {
-                Intent startIntent = new Intent(getApplicationContext(), MainActivity.class);
-                startActivity(startIntent);
-            }
-        });
-
-        repeat.setOnClickListener(new View.OnClickListener() { //sends you back the home +
-            @Override
-            public void onClick(View v) {
-                Intent startIntent = new Intent(getApplicationContext(), memory4.class);
-                startActivity(startIntent);
-            }
-        });
-
-
-
-
 
 
     }

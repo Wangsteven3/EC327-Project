@@ -16,10 +16,10 @@ import org.w3c.dom.Text;
 import java.lang.*;
 import java.util.Random;
 
-public class Simon extends AppCompatActivity {
+public class Simonb extends AppCompatActivity {
 
 
-    int counter, score, over, canrepeat =0;
+    int counter, score, over;
     String order = "";
 
 
@@ -45,14 +45,13 @@ public class Simon extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         counter = 0; score = 0; over = 0;
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.simon);
+        setContentView(R.layout.simonb);
         //creation of sounds, buttons and text
         Button back = (Button) findViewById(R.id.back);
         Button redbtn = (Button) findViewById(R.id.redbtn);
         Button greenbtn = (Button) findViewById(R.id.greenbtn);
         Button bluebtn = (Button) findViewById(R.id.bluebtn);
         Button yellowbtn = (Button) findViewById(R.id.yellowbtn);
-        Button repeat = (Button) findViewById(R.id.repeatSimon);
         TextView text = (TextView) findViewById(R.id.textView);
         final MediaPlayer redbeep = MediaPlayer.create(this, R.raw.red);
         final MediaPlayer bluebeep = MediaPlayer.create(this, R.raw.blue);
@@ -104,7 +103,7 @@ public class Simon extends AppCompatActivity {
                                                 bluebtn.setBackgroundColor(Color.parseColor("#02b9ff"));
                                                 playAudio(R.raw.blue);
                                             }
-                                            canrepeat++;
+
 
                                         }
                                     }, 100
@@ -325,24 +324,15 @@ public class Simon extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(canrepeat == 6) {
-                    Intent startIntent = new Intent(getApplicationContext(), MainActivity.class);
-                    startActivity(startIntent);
-                }
+                float[] scorearray;
+                Bundle extras = getIntent().getExtras();
+                scorearray = extras.getFloatArray("score");
+                scorearray[3] = score;
+
+                Intent i = new Intent(getApplicationContext(), scorepage.class);
+                i.putExtra("score", scorearray);
+                startActivity(i);
             }
         });
-
-
-        repeat.setOnClickListener(new View.OnClickListener() { //sends you back the home +
-            @Override
-            public void onClick(View v) {
-                if (canrepeat == 6) {
-                    Intent startIntent = new Intent(getApplicationContext(), Simon.class);
-                    startActivity(startIntent);
-                }
-            }
-        });
-
-
     }
 }

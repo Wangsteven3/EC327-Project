@@ -24,9 +24,12 @@
         <activity android:name=".gamemenu"></activity>
         <activity android:name=".memory2"></activity>
         <activity android:name=".memory3"></activity>
-        <activity android:name=".memory4">
-
-        </activity>
+        <activity android:name=".memory2b"></activity>
+        <activity android:name=".memory3b"></activity>
+        <activity android:name=".memory4b"></activity>
+        <activity android:name=".Simonb"></activity>
+        <activity android:name=".memory4"></activity>
+        <activity android:name=".scorepage"></activity>
 
         <!-- define alert receiver -->
         <receiver android:name=".AlertReceiver"/>

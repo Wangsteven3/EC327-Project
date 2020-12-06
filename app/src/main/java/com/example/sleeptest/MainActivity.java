@@ -3,6 +3,7 @@ package com.example.sleeptest;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -12,6 +13,19 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) { //activity_main xml (home page)
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Button begin = (Button) findViewById(R.id.start);
+
+
+        begin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent startIntent = new Intent(getApplicationContext(), memory2b.class);
+                startActivity(startIntent);
+            }
+        });
+
+
     }
 
     public void onButtonClick(View v) { //button click listener for profile, direct the home page to profile page
