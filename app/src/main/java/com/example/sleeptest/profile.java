@@ -1,16 +1,31 @@
 package com.example.sleeptest;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
-public class profile extends Activity {
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
+import androidx.lifecycle.ViewModelProviders;
 
+import java.util.List;
+
+public class profile extends AppCompatActivity {
+    private ScoresViewModel scoresViewModel;
     @Override
     protected void onCreate(Bundle savedInstanceState) { //profile xml
         super.onCreate(savedInstanceState);
         setContentView(R.layout.profile); //profile xml
+
+        scoresViewModel = ViewModelProviders.of(this).get(ScoresViewModel.class);
+        scoresViewModel.getAllScores().observe(this, new Observer<List<Scores>>() {
+            @Override
+            public void onChanged(List<Scores> scores) {
+                Toast.makeText(profile.this,"onchange", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     public void MenuClick(View v) { //button click listener for profile page menu button
