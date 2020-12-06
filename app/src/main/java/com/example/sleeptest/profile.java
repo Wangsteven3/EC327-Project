@@ -27,10 +27,12 @@ public class profile extends Activity {
 
     public void MenuClick(View v) { //button click listener for profile page menu button
 
-        if (v.getId() == R.id.Bmenu)
+        if (v.getId() == R.id.Bmenu) {
+
             Intent i = new Intent(profile.this, MainActivity.class);
             startActivity(i);
 
         }
     }
 }
+
