@@ -1,19 +1,17 @@
 package com.example.sleeptest;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.drawable.AnimationDrawable;
 import android.media.MediaPlayer;
 import android.os.Bundle;
-import android.provider.MediaStore;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
-import java.lang.*;
 import java.util.Random;
 
 public class Simon extends AppCompatActivity {
@@ -21,7 +19,6 @@ public class Simon extends AppCompatActivity {
 
     int counter, score, over;
     String order = "";
-
 
     //this piece of code was taken from: https://www.zidsworld.com/android-development/stop-other-sounds-when-new-sound-is-selected-in-android-java/
     //the reason why this code is needed is because if you hit the same button too fast the audio doesnt play
@@ -46,6 +43,14 @@ public class Simon extends AppCompatActivity {
         counter = 0; score = 0; over = 0;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.simon);
+
+        //gradient background animation
+        ConstraintLayout app = findViewById(R.id.simonLayout);
+        AnimationDrawable gradientBackground = (AnimationDrawable) app.getBackground();
+        gradientBackground.setEnterFadeDuration(1000);
+        gradientBackground.setExitFadeDuration(3000);
+        gradientBackground.start();
+
         //creation of sounds, buttons and text
         Button back = (Button) findViewById(R.id.back);
         Button redbtn = (Button) findViewById(R.id.redbtn);
@@ -182,11 +187,15 @@ public class Simon extends AppCompatActivity {
                             if (sequence[i] == 3)
                                 order = order + "blue ";
                         }
-                        prompt = "You only got " + score + " right, the correct order was: " + order;
+
+                        //\n to print next line for responsiveness and UI
+                        prompt = "You got " + score + " right" + "\n" + "Correct order: " + order;
                         text.setText(prompt);
                         playAudio(R.raw.error);
                         over++;
+
                     }
+
                     if (sequence[counter] == 0 && over == 0) {//if it was correct plays sound and increases score
                         score++;
                         playAudio(R.raw.red);
@@ -224,7 +233,7 @@ public class Simon extends AppCompatActivity {
                                 order = order + "blue ";
                         }
 
-                        prompt = "You only got " + score + " right, the correct order was: " + order;
+                        prompt = "You got " + score + " right" + "\n" + "Correct order: " + order;
                         text.setText(prompt);
                         over++;
                         playAudio(R.raw.error);
@@ -262,7 +271,7 @@ public class Simon extends AppCompatActivity {
                                 order = order + "blue ";
                         }
 
-                        prompt = "You only got " + score + " right, the correct order was: " + order;
+                        prompt = "You got " + score + " right" + "\n" + "Correct order: " + order;
                         text.setText(prompt);
                         over++;
                         playAudio(R.raw.error);
@@ -299,7 +308,7 @@ public class Simon extends AppCompatActivity {
                                 order = order + "blue ";
                         }
 
-                        prompt = "You only got " + score + " right, the correct order was: " + order;
+                        prompt = "You got " + score + " right" + "\n" + "Correct order: " + order;
                         text.setText(prompt);
                         over++;
                         playAudio(R.raw.error);
