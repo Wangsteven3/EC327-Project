@@ -24,6 +24,7 @@
         <activity android:name=".gamemenu"></activity>
         <activity android:name=".memory2"></activity>
         <activity android:name=".memory3"></activity>
+        <activity android:name=".Math"></activity>
         <activity android:name=".memory4">
 
         </activity>

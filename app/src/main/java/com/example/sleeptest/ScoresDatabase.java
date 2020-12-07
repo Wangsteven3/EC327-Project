@@ -43,7 +43,7 @@ public abstract class ScoresDatabase extends RoomDatabase {
         }
         @Override
         protected Void doInBackground(Void... voids) {
-            //scoresDao.insert(new Scores("12/05/2020",1) );
+            scoresDao.insert(new Scores("12/07/2020",4) );
             return null;
         }
     }
