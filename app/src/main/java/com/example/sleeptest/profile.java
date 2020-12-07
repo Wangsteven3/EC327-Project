@@ -9,21 +9,31 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.lifecycle.ViewModelProviders;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
 public class profile extends AppCompatActivity {
     private ScoresViewModel scoresViewModel;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) { //profile xml
         super.onCreate(savedInstanceState);
         setContentView(R.layout.profile); //profile xml
 
+        RecyclerView recyclerView = findViewById(R.id.inputstuff);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setHasFixedSize(true);
+
+        final ScoresAdapter adapter = new ScoresAdapter();
+        recyclerView.setAdapter(adapter);
+
         scoresViewModel = ViewModelProviders.of(this).get(ScoresViewModel.class);
         scoresViewModel.getAllScores().observe(this, new Observer<List<Scores>>() {
             @Override
             public void onChanged(List<Scores> scores) {
-                Toast.makeText(profile.this,"onchange", Toast.LENGTH_SHORT).show();
+                adapter.setScores(scores);
             }
         });
     }

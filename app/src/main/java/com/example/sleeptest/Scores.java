@@ -28,6 +28,6 @@ public class Scores {
 
 
     public int getId() { return id; }
-    public String getDateTime() { return dateTime; }
-    public int getTotalScore() { return totalScore; }
+    public String getDateTime() { return this.dateTime; }
+    public int getTotalScore() { return this.totalScore; }
 }
