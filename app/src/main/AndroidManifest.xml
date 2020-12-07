@@ -19,7 +19,10 @@
 
         <!-- define profile and alarm activity -->
 
-        <activity android:name=".profile"/>
+        <activity android:name=".profile"
+            android:launchMode="singleTop" />
+        <activity android:name=".AddScoresActivity"
+            android:parentActivityName=".profile"/>
         <activity android:name=".alarm"/>
 
         <activity android:name=".Simon"/>
@@ -32,6 +35,7 @@
         <activity android:name=".memory4"/>
         <activity android:name=".memory4b"/>
         <activity android:name=".Math"/>
+        <activity android:name=".Mathb"/>
         <activity android:name=".scorepage"/>
         <activity android:name=".Mathb"/>
 
