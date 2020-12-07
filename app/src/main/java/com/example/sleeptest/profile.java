@@ -1,7 +1,6 @@
 package com.example.sleeptest;
 
 import android.content.Intent;
-import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -13,7 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProvider;
+import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -50,7 +49,7 @@ public class profile extends AppCompatActivity {
         final ScoresAdapter adapter = new ScoresAdapter();
         recyclerView.setAdapter(adapter);
 
-        scoresViewModel = ViewModelProvider.of(this).get(ScoresViewModel.class);
+        scoresViewModel = ViewModelProviders.of(this).get(ScoresViewModel.class);
         scoresViewModel.getAllScores().observe(this, new Observer<List<Scores>>() {
             @Override
             public void onChanged(List<Scores> scores) {
