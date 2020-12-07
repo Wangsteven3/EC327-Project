@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".memory2" //fix??
+    tools:context=".memory2b"
 
     android:id="@+id/mem2bLayout"
     android:background="@drawable/gradientbackground_list">
