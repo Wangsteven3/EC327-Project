@@ -19,7 +19,10 @@
 
         <!-- define profile and alarm activity -->
 
-        <activity android:name=".profile"/>
+        <activity android:name=".profile"
+            android:launchMode="singleTop" />
+        <activity android:name=".AddScoresActivity"
+            android:parentActivityName=".profile"/>
         <activity android:name=".alarm"/>
 
         <activity android:name=".Simon"/>
