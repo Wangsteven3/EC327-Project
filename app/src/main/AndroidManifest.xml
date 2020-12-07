@@ -31,7 +31,7 @@
         <activity android:name=".memory3b"/>
         <activity android:name=".memory4"/>
         <activity android:name=".memory4b"/>
-
+        <activity android:name=".Math"/>
         <activity android:name=".scorepage"/>
 
         <!-- define alert receiver -->
