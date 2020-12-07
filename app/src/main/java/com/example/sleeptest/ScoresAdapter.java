@@ -39,6 +39,10 @@ public class ScoresAdapter extends RecyclerView.Adapter<ScoresAdapter.ScoresHold
         notifyDataSetChanged();
     }
 
+    public Scores getScoreAt(int position){
+        return scores.get(position);
+    }
+
     class ScoresHolder extends RecyclerView.ViewHolder{
         private TextView textViewDate;
         private TextView textViewScore;
