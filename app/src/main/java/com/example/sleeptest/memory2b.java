@@ -14,10 +14,10 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import java.util.Random;
 
 
-public class memory2 extends AppCompatActivity {
+public class memory2b extends AppCompatActivity {
     //Declaration of variables
     Random rand = new Random(); //we have the random class
-    short redcounter, greencounter, bluecounter, yellowcounter, j = 0, accurate =0, incorrect=0, b1click =1, b2click = 1, b3click = 1, b4click = 1, totalrightsquares;
+    short redcounter, greencounter, bluecounter, yellowcounter, j = 0, accurate =0, incorrect=0, b1click =1, b2click = 1, b3click = 1, b4click = 1, totalrightsquares, submitted = 0;
     //the color counters are used so we can track how many total colors there are
     //j is just a counter for the while loop later on. Accurate and incorrect are used to keep count for final score
     //b1-4click act as on off switches later on
@@ -35,19 +35,17 @@ public class memory2 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.memorytwo);
+        setContentView(R.layout.memory2b);
         //creation of the buttons
         Button one = (Button) findViewById(R.id.button1);
         Button two = (Button) findViewById(R.id.button2);
         Button three = (Button) findViewById(R.id.button3);
         Button four = (Button) findViewById(R.id.button4);
-        Button back = (Button) findViewById(R.id.main);
         Button submission = (Button) findViewById(R.id.answer);
         TextView prompt = (TextView) findViewById(R.id.textView2);
-        Button repeat = (Button) findViewById(R.id.restart2);
 
         //gradient background animation
-        ConstraintLayout app = findViewById(R.id.mem2Layout);
+        ConstraintLayout app = findViewById(R.id.mem2bLayout);
         AnimationDrawable gradientBackground = (AnimationDrawable) app.getBackground();
         gradientBackground.setEnterFadeDuration(1000);
         gradientBackground.setExitFadeDuration(5000);
@@ -287,7 +285,8 @@ public class memory2 extends AppCompatActivity {
         submission.setOnClickListener(new View.OnClickListener() { //here is the submission button
             @Override
             public void onClick(View v) { //creates string prompt
-                String prompt1 = "You selected " + accurate + " right out of " +totalrightsquares + " of the correct squares and selected " + incorrect + " wrong squares";
+                String prompt1 = "You selected " + accurate + " right out of " + totalrightsquares +
+                        " of the correct squares and selected " + incorrect + " wrong squares";
                 prompt.setText(prompt1); //sets the textbox
 
                 //bring back the colors
@@ -349,31 +348,26 @@ public class memory2 extends AppCompatActivity {
                     four.setBackgroundColor(Color.parseColor("#F3FB05"));
                 }
 
+                if(submitted == 0) {
 
+                    float[] scorearray = {0, 0, 0, 0, 0};
+                    float score = (float)(accurate ++- incorrect) / totalrightsquares;
+                    scorearray[0] = score;
+                    submitted++;
+                    new java.util.Timer().schedule(
+                            new java.util.TimerTask() {
+                                @Override
+                                public void run() {
+                                    Intent i = new Intent(getApplicationContext(), memory3b.class);
+                                    i.putExtra("score", scorearray);
+                                    startActivity(i);
+                                }
+                            },
+                            2000
+                    );
+                }
             }
         });
-
-
-        back.setOnClickListener(new View.OnClickListener() { //sends you back the home +
-            @Override
-            public void onClick(View v) {
-                Intent startIntent = new Intent(getApplicationContext(), MainActivity.class);
-                startActivity(startIntent);
-            }
-        });
-
-        repeat.setOnClickListener(new View.OnClickListener() { //sends you back the home +
-            @Override
-            public void onClick(View v) {
-                Intent startIntent = new Intent(getApplicationContext(), memory2.class);
-                startActivity(startIntent);
-            }
-        });
-
-
-
-
-
 
 
 
