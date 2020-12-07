@@ -15,23 +15,19 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-
-        <!-- define profile and alarm activity -->
-        <activity android:name=".profile"></activity>
-        <activity android:name=".alarm"></activity>
-        <activity android:name=".Simon"></activity>
-        <activity android:name=".gamemenu"></activity>
-        <activity android:name=".memory2"></activity>
-        <activity android:name=".memory3"></activity>
-        <activity android:name=".Math"></activity>
-        <activity android:name=".memory4">
-
-        </activity>
-
-        <!-- define alert receiver -->
-        <receiver android:name=".AlertReceiver"/>
-
+        </activity> <!-- define profile and alarm activity -->
+        <activity android:name=".profile"
+            android:launchMode="singleTop" />
+        <activity android:name=".AddScoresActivity"
+            android:parentActivityName=".profile"/>
+        <activity android:name=".alarm" />
+        <activity android:name=".Simon" />
+        <activity android:name=".gamemenu" />
+        <activity android:name=".memory2" />
+        <activity android:name=".memory3" />
+        <activity android:name=".Math" />
+        <activity android:name=".memory4"></activity> <!-- define alert receiver -->
+        <receiver android:name=".AlertReceiver" />
     </application>
 
 </manifest>

@@ -12,9 +12,9 @@ public class Scores {
     @ColumnInfo(name = "date_time")
     private String dateTime;
     @ColumnInfo(name = "Total Score")
-    private int totalScore;
+    private String totalScore;
 
-    public Scores(String dateTime, int totalScore) {
+    public Scores(String dateTime, String totalScore) {
         this.dateTime = dateTime;
         this.totalScore = totalScore;
     }
@@ -24,10 +24,10 @@ public class Scores {
     }
 
     public void setDateTime(String dateTime) { this.dateTime = dateTime; }
-    public void setTotalScore(int totalScore) { this.totalScore = totalScore; }
+    public void setTotalScore(String totalScore) { this.totalScore = totalScore; }
 
     public int getId() { return id; }
     public String getDateTime() { return this.dateTime; }
-    public int getTotalScore() { return this.totalScore; }
+    public String getTotalScore() { return this.totalScore; }
 
 }
