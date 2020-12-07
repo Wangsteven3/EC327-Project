@@ -43,7 +43,11 @@ public abstract class ScoresDatabase extends RoomDatabase {
         }
         @Override
         protected Void doInBackground(Void... voids) {
+<<<<<<< Updated upstream
             scoresDao.insert(new Scores("12/05/2020",1, 2,3,4) );
+=======
+            scoresDao.insert(new Scores("12/07/2020",4) );
+>>>>>>> Stashed changes
             return null;
         }
     }
