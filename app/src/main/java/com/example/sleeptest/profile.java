@@ -14,7 +14,6 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
-import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -51,7 +50,7 @@ public class profile extends AppCompatActivity {
         final ScoresAdapter adapter = new ScoresAdapter();
         recyclerView.setAdapter(adapter);
 
-        scoresViewModel = ViewModelProviders.of(this).get(ScoresViewModel.class);
+        scoresViewModel = ViewModelProvider.of(this).get(ScoresViewModel.class);
         scoresViewModel.getAllScores().observe(this, new Observer<List<Scores>>() {
             @Override
             public void onChanged(List<Scores> scores) {
