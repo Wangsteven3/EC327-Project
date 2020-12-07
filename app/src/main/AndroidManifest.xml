@@ -18,6 +18,7 @@
         </activity>
 
         <!-- define profile and alarm activity -->
+<<<<<<< Updated upstream
         <activity android:name=".profile"></activity>
         <activity android:name=".alarm"></activity>
         <activity android:name=".Simon"></activity>
@@ -31,6 +32,23 @@
         <activity android:name=".memory4"></activity>
         <activity android:name=".scorepage"></activity>
         <activity android:name=".Math"></activity>
+=======
+        <activity android:name=".profile"/>
+        <activity android:name=".alarm"/>
+
+        <activity android:name=".Simon"/>
+        <activity android:name=".Simonb"/>
+        <activity android:name=".gamemenu"/>
+        <activity android:name=".memory2"/>
+        <activity android:name=".memory2b"/>
+        <activity android:name=".memory3"/>
+        <activity android:name=".memory3b"/>
+        <activity android:name=".memory4"/>
+        <activity android:name=".memory4b"/>
+        <activity android:name=".Math"/>
+        <activity android:name=".Mathb"/>
+        <activity android:name=".scorepage"/>
+>>>>>>> Stashed changes
 
         <!-- define alert receiver -->
         <receiver android:name=".AlertReceiver"/>

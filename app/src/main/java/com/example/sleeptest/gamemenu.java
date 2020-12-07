@@ -18,7 +18,11 @@ public class gamemenu extends AppCompatActivity {
         Button Simon = (Button) findViewById(R.id.choice1);
         Button memorythree = (Button) findViewById(R.id.choice3);
         Button memoryfour = (Button) findViewById(R.id.choice4);
+<<<<<<< Updated upstream
         Button math = (Button) findViewById(R.id.choice5);
+=======
+        Button Math = (Button) findViewById(R.id.button19);
+>>>>>>> Stashed changes
 
         memorytwo.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -52,13 +56,21 @@ public class gamemenu extends AppCompatActivity {
             }
         });
 
+<<<<<<< Updated upstream
         math.setOnClickListener(new View.OnClickListener() {
+=======
+        Math.setOnClickListener(new View.OnClickListener() {
+>>>>>>> Stashed changes
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(gamemenu.this, Math.class);
                 startActivity(i);
             }
         });
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
 
 
     }

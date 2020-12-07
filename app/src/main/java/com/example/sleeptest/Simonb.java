@@ -329,7 +329,7 @@ public class Simonb extends AppCompatActivity {
                 scorearray = extras.getFloatArray("score");
                 scorearray[3] = score;
 
-                Intent i = new Intent(getApplicationContext(), scorepage.class);
+                Intent i = new Intent(getApplicationContext(), Mathb.class);
                 i.putExtra("score", scorearray);
                 startActivity(i);
             }
