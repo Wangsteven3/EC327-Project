@@ -10,5 +10,3 @@ Project Lead: Tom Panenko
 Interface Lead: Stephen Wang
 Technical Lead: David Liu 
 Specification Lead: Alex Lee
-
-test
