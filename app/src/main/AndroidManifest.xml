@@ -33,6 +33,7 @@
         <activity android:name=".memory4b"/>
         <activity android:name=".Math"/>
         <activity android:name=".scorepage"/>
+        <activity android:name=".Mathb"/>
 
         <!-- define alert receiver -->
         <receiver android:name=".AlertReceiver"/>

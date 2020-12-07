@@ -326,6 +326,7 @@ public class Simon extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //only allows the user to repeat once simon beeps all 6 times to prevent multiple audio playing over itself
                 if(canrepeat == 6) {
                     Intent startIntent = new Intent(getApplicationContext(), MainActivity.class);
                     startActivity(startIntent);
@@ -337,6 +338,7 @@ public class Simon extends AppCompatActivity {
         repeat.setOnClickListener(new View.OnClickListener() { //sends you back the home +
             @Override
             public void onClick(View v) {
+                //only allows the user to leave once all simon beeps have been beep to prevet audio bugs
                 if (canrepeat == 6) {
                     Intent startIntent = new Intent(getApplicationContext(), Simon.class);
                     startActivity(startIntent);

@@ -14,7 +14,7 @@ import android.widget.TextView;
 
 import java.util.Random;
 
-
+// THE B VARIATION OF THE CODE IS THE EXACT SAME AS THE NON-B COUNTERPART BUT CARRIES OVER DATA FROM THE CHAIN AND LINKS TO THE NEXT PROGRAM, CHANGES MADE AT THE BOTTOM
 public class memory3b extends AppCompatActivity {
     Random rand = new Random(); //we have the random class
     short redcounter, greencounter, bluecounter, yellowcounter, j = 0, accurate =0, incorrect=0, b1click =1, b2click = 1, b3click = 1, b4click = 1, b5click = 1, b6click = 1, b7click = 1, b8click = 1, b9click =1, totalrightsquares, submitted = 0;
@@ -624,22 +624,22 @@ public class memory3b extends AppCompatActivity {
 
                 if(submitted == 0) {
                     float[] scorearray;
-                    Bundle extras = getIntent().getExtras();
+                    Bundle extras = getIntent().getExtras(); //extracts extra and makes it equal to the scorearray
                     scorearray = extras.getFloatArray("score");
                     scorearray[1] = (float) (accurate - incorrect) / totalrightsquares;
-                    submitted++;
+                    submitted++; //button cant be spammed
 
                     new java.util.Timer().schedule(
                             new java.util.TimerTask() {
                                 @Override
                                 public void run() {
-                                    Intent i = new Intent(getApplicationContext(), memory4b.class);
+                                    Intent i = new Intent(getApplicationContext(), memory4b.class); //next activity and saves updated score arary
                                     i.putExtra("score", scorearray);
                                     startActivity(i);
 
                                 }
                             },
-                            2000
+                            2000 //give user 2 seconds to look over
                     );
                 }
             }

@@ -12,7 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import org.w3c.dom.Text;
 
 import java.util.Random;
-
+// THE B VARIATION OF THE CODE IS THE EXACT SAME AS THE NON-B COUNTERPART BUT CARRIES OVER DATA FROM THE CHAIN AND LINKS TO THE NEXT PROGRAM, CHANGES MADE AT THE BOTTOM
 public class Mathb extends AppCompatActivity{
 
     Random rand = new Random();
@@ -166,7 +166,7 @@ public class Mathb extends AppCompatActivity{
         back.setOnClickListener(new View.OnClickListener() { //sends you back the home +
             @Override
             public void onClick(View v) {
-
+                //sets up new scorearray and updates it
                 float[] scorearray;
                 Bundle extras = getIntent().getExtras();
                 scorearray = extras.getFloatArray("score");
@@ -174,7 +174,7 @@ public class Mathb extends AppCompatActivity{
                     scorearray[4] = 100;
                 } else
                     scorearray[4] = 0;
-
+                //sends to scorepage and updates score sheet
                 Intent i = new Intent(getApplicationContext(), scorepage.class);
                 i.putExtra("score", scorearray);
                 startActivity(i);

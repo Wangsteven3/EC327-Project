@@ -16,7 +16,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 
 import java.util.Random;
 
-
+// THE B VARIATION OF THE CODE IS THE EXACT SAME AS THE NON-B COUNTERPART BUT CARRIES OVER DATA FROM THE CHAIN AND LINKS TO THE NEXT PROGRAM, CHANGES MADE AT THE BOTTOM
 public class memory2b extends AppCompatActivity {
     //Declaration of variables
     Random rand = new Random(); //we have the random class
@@ -346,18 +346,18 @@ public class memory2b extends AppCompatActivity {
                     four.setBackgroundColor(Color.parseColor("#F3FB05"));
                 }
 
-                if(submitted == 0) {
-
-                    float[] scorearray = {0, 0, 0, 0, 0};
-                    float score = (float)(accurate - incorrect) / totalrightsquares;
+                if(submitted == 0) { //we created a submitted condition to make sure the user does not spam the submit button
+                //we do this because we want to give time to the user to look at the answer
+                    float[] scorearray = {0, 0, 0, 0, 0}; //creates a score array of 5 to keep track of the 5 game we will play
+                    float score = (float)(accurate - incorrect) / totalrightsquares; //algorithm for the score calc
                     scorearray[0] = score;
-                    submitted++;
-                    new java.util.Timer().schedule(
+                    submitted++; //makes sure user cant hit this multiple times
+                    new java.util.Timer().schedule( //gives 2 seconds for user to see work
                             new java.util.TimerTask() {
                                 @Override
                                 public void run() {
                                     Intent i = new Intent(getApplicationContext(), memory3b.class);
-                                    i.putExtra("score", scorearray);
+                                    i.putExtra("score", scorearray); //adds an extra to this intent which can be taken later
                                     startActivity(i);
                                 }
                             },

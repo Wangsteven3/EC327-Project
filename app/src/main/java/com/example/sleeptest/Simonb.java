@@ -15,7 +15,7 @@ import org.w3c.dom.Text;
 
 import java.lang.*;
 import java.util.Random;
-
+// THE B VARIATION OF THE CODE IS THE EXACT SAME AS THE NON-B COUNTERPART BUT CARRIES OVER DATA FROM THE CHAIN AND LINKS TO THE NEXT PROGRAM, CHANGES MADE AT THE BOTTOM
 public class Simonb extends AppCompatActivity {
 
 
@@ -324,11 +324,11 @@ public class Simonb extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                float[] scorearray;
+                float[] scorearray; //gets updated scorearray and changes it
                 Bundle extras = getIntent().getExtras();
                 scorearray = extras.getFloatArray("score");
                 scorearray[3] = score;
-
+                //sends updated score array and starts new intent
                 Intent i = new Intent(getApplicationContext(), Mathb.class);
                 i.putExtra("score", scorearray);
                 startActivity(i);

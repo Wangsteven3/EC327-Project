@@ -16,7 +16,7 @@ import java.util.Random;
 
 
 
-
+// THE B VARIATION OF THE CODE IS THE EXACT SAME AS THE NON-B COUNTERPART BUT CARRIES OVER DATA FROM THE CHAIN AND LINKS TO THE NEXT PROGRAM, CHANGES MADE AT THE BOTTOM
 public class memory4b extends AppCompatActivity {
     Random rand = new Random(); //we have the random class
     short redcounter, greencounter, bluecounter, yellowcounter, j = 0, accurate =0, incorrect=0, b1click =1, b2click = 1, b3click = 1, b4click = 1, b5click = 1, b6click = 1, b7click = 1,
@@ -362,7 +362,7 @@ public class memory4b extends AppCompatActivity {
 
                     }
                 },
-                666
+                1000
         );
 
         one.setOnClickListener(new View.OnClickListener() { //all the other buttons are derived from this general idea
@@ -1024,22 +1024,22 @@ public class memory4b extends AppCompatActivity {
                 }
 
                 if (submitted == 0) {
-                    float[] scorearray;
+                    float[] scorearray; //get the float array and updates it
                     Bundle extras = getIntent().getExtras();
                     scorearray = extras.getFloatArray("score");
                     scorearray[2] = (float) (accurate - incorrect) / totalrightsquares;
-                    submitted++;
+                    submitted++; //makes sure user cant spam this button
 
                     new java.util.Timer().schedule(
                             new java.util.TimerTask() {
                                 @Override
                                 public void run() {
                                     Intent i = new Intent(getApplicationContext(), Simonb.class);
-                                    i.putExtra("score", scorearray);
+                                    i.putExtra("score", scorearray); //sends updated scorearray
                                     startActivity(i);
                                 }
                             },
-                            1000
+                            2000 //gives user 1 second to look at what he/she did wrong
                     );
                 }
             }
