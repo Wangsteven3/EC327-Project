@@ -1,15 +1,13 @@
 package com.example.sleeptest;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import android.content.Intent;
 import android.graphics.Color;
-import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.constraintlayout.widget.ConstraintLayout;
 
 import java.util.Random;
 
@@ -79,13 +77,6 @@ public class memory4 extends AppCompatActivity {
         Button submission = (Button) findViewById(R.id.answer);
         TextView prompt = (TextView) findViewById(R.id.textView2);
 
-        //gradient background animation
-        ConstraintLayout app = findViewById(R.id.mem4Layout);
-        AnimationDrawable gradientBackground = (AnimationDrawable) app.getBackground();
-        gradientBackground.setEnterFadeDuration(1000);
-        gradientBackground.setExitFadeDuration(5000);
-        gradientBackground.start();
-
 
         for(int i = 0; i < 16; i++) { //looping to get the total colors
             if(num[i] == 0)
@@ -110,8 +101,9 @@ public class memory4 extends AppCompatActivity {
         if(yellowcounter != 0)
             numpossibilities[3] = 3;
 
-        while(numpossibilities[j] == 0 && redcounter == 0) //here we use j to loop through, as long as j != 0 and redcounter doesn't equal 0 we increase j
-            j++;
+        //while(numpossibilities[j] == 0 && redcounter == 0) //here we use j to loop through, as long as j != 0 and redcounter doesn't equal 0 we increase j
+            //j++;
+        j  = (short) b1;
 
 
         //following sets all the colors of the buttons with if statements
@@ -371,7 +363,7 @@ public class memory4 extends AppCompatActivity {
 
                     }
                 },
-                666
+                1000
         );
 
         one.setOnClickListener(new View.OnClickListener() { //all the other buttons are derived from this general idea

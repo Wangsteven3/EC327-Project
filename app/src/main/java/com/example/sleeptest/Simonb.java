@@ -1,11 +1,9 @@
 package com.example.sleeptest;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.Intent;
 import android.graphics.Color;
-import android.graphics.drawable.AnimationDrawable;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -61,13 +59,6 @@ public class Simonb extends AppCompatActivity {
         final MediaPlayer yellowbeep = MediaPlayer.create(this, R.raw.yellow);
         final MediaPlayer error = MediaPlayer.create(this, R.raw.error);
         TextView test = (TextView) findViewById(R.id.test);
-
-        //gradient background animation
-        ConstraintLayout app = findViewById(R.id.simonBLayout);
-        AnimationDrawable gradientBackground = (AnimationDrawable) app.getBackground();
-        gradientBackground.setEnterFadeDuration(1000);
-        gradientBackground.setExitFadeDuration(5000);
-        gradientBackground.start();
 
         Random rand = new Random(); //random num gen for colors and sequence
 
@@ -338,7 +329,7 @@ public class Simonb extends AppCompatActivity {
                 scorearray = extras.getFloatArray("score");
                 scorearray[3] = score;
 
-                Intent i = new Intent(getApplicationContext(), scorepage.class);
+                Intent i = new Intent(getApplicationContext(), Mathb.class);
                 i.putExtra("score", scorearray);
                 startActivity(i);
             }

@@ -84,8 +84,9 @@ public class memory3 extends AppCompatActivity {
         if(yellowcounter != 0)
             numpossibilities[3] = 3;
 
-        while(numpossibilities[j] == 0 && redcounter == 0) //here we use j to loop through, as long as j != 0 and redcounter doesn't equal 0 we increase j
-            j++;
+        //while(numpossibilities[j] == 0 && redcounter == 0) //here we use j to loop through, as long as j != 0 and redcounter doesn't equal 0 we increase j
+            //j++;
+        j  = (short) b1;
 
 
         //following sets all the colors of the buttons with if statements
