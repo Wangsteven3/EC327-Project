@@ -81,7 +81,7 @@ public class profile extends AppCompatActivity {
 
             Intent i = new Intent(profile.this, MainActivity.class);
             startActivity(i);
-
+            overridePendingTransition(R.anim.slide_left, R.anim.slide_left); //set animation when activity starts
         }
     }
 

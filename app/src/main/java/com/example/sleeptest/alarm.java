@@ -48,7 +48,7 @@ public class alarm extends AppCompatActivity implements TimePickerDialog.OnTimeS
 
             Intent i = new Intent(alarm.this, MainActivity.class);
             startActivity(i);
-
+            overridePendingTransition(R.anim.slide_left, R.anim.slide_left);//set animation when activity starts
         }
     }
 
