@@ -1,17 +1,15 @@
 package com.example.sleeptest;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.app.VoiceInteractor;
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.example.sleeptest.MainActivity;
-import com.example.sleeptest.R;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import java.util.Random;
 
@@ -47,6 +45,13 @@ public class memory2 extends AppCompatActivity {
         Button submission = (Button) findViewById(R.id.answer);
         TextView prompt = (TextView) findViewById(R.id.textView2);
         Button repeat = (Button) findViewById(R.id.restart2);
+
+        //gradient background animation
+        ConstraintLayout app = findViewById(R.id.mem2Layout);
+        AnimationDrawable gradientBackground = (AnimationDrawable) app.getBackground();
+        gradientBackground.setEnterFadeDuration(1000);
+        gradientBackground.setExitFadeDuration(5000);
+        gradientBackground.start();
 
 
         for(int i = 0; i < 4; i++) { //looping to get the total colors

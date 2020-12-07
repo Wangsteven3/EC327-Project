@@ -1,19 +1,17 @@
 package com.example.sleeptest;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.drawable.AnimationDrawable;
 import android.media.MediaPlayer;
 import android.os.Bundle;
-import android.provider.MediaStore;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
-import java.lang.*;
 import java.util.Random;
 
 public class Simon extends AppCompatActivity {
@@ -43,7 +41,7 @@ public class Simon extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        counter = 0; score = 0; over = 0;
+        counter = 0; score = 0; over = 0; canrepeat = 0;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.simon);
         //creation of sounds, buttons and text
@@ -54,12 +52,15 @@ public class Simon extends AppCompatActivity {
         Button yellowbtn = (Button) findViewById(R.id.yellowbtn);
         Button repeat = (Button) findViewById(R.id.repeatSimon);
         TextView text = (TextView) findViewById(R.id.textView);
-        final MediaPlayer redbeep = MediaPlayer.create(this, R.raw.red);
-        final MediaPlayer bluebeep = MediaPlayer.create(this, R.raw.blue);
-        final MediaPlayer greenbeep = MediaPlayer.create(this, R.raw.green);
-        final MediaPlayer yellowbeep = MediaPlayer.create(this, R.raw.yellow);
-        final MediaPlayer error = MediaPlayer.create(this, R.raw.error);
+
         TextView test = (TextView) findViewById(R.id.test);
+
+        //gradient background animation
+        ConstraintLayout app = findViewById(R.id.simonLayout);
+        AnimationDrawable gradientBackground = (AnimationDrawable) app.getBackground();
+        gradientBackground.setEnterFadeDuration(1000);
+        gradientBackground.setExitFadeDuration(5000);
+        gradientBackground.start();
 
         Random rand = new Random(); //random num gen for colors and sequence
 

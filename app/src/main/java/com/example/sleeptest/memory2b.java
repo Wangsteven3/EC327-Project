@@ -1,10 +1,12 @@
 package com.example.sleeptest;
 
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.VoiceInteractor;
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -12,6 +14,7 @@ import android.widget.TextView;
 
 import com.example.sleeptest.MainActivity;
 import com.example.sleeptest.R;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import java.util.Random;
 
@@ -45,6 +48,13 @@ public class memory2b extends AppCompatActivity {
         Button four = (Button) findViewById(R.id.button4);
         Button submission = (Button) findViewById(R.id.answer);
         TextView prompt = (TextView) findViewById(R.id.textView2);
+
+        //gradient background animation
+        ConstraintLayout app = findViewById(R.id.mem2bLayout);
+        AnimationDrawable gradientBackground = (AnimationDrawable) app.getBackground();
+        gradientBackground.setEnterFadeDuration(1000);
+        gradientBackground.setExitFadeDuration(5000);
+        gradientBackground.start();
 
 
         for(int i = 0; i < 4; i++) { //looping to get the total colors
@@ -280,7 +290,9 @@ public class memory2b extends AppCompatActivity {
         submission.setOnClickListener(new View.OnClickListener() { //here is the submission button
             @Override
             public void onClick(View v) { //creates string prompt
-                String prompt1 = "You selected " + accurate + " right out of " +totalrightsquares + " of the correct squares and selected " + incorrect + " wrong squares";
+
+                String prompt1 = "You selected " + accurate + " right out of " + totalrightsquares +
+                        " of the correct squares and selected " + incorrect + " wrong squares";
                 prompt.setText(prompt1); //sets the textbox
 
                 //bring back the colors

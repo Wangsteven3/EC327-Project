@@ -4,7 +4,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+
+
+    android:id="@+id/scorepageLayout"
+    android:background="@drawable/gradientbackground_list">
 
     <TextView
         android:id="@+id/textView3"
@@ -33,7 +37,6 @@
         android:id="@+id/textView8"
         android:layout_width="234dp"
         android:layout_height="40dp"
-        android:text="TextView"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -45,7 +48,6 @@
         android:id="@+id/textView9"
         android:layout_width="234dp"
         android:layout_height="40dp"
-        android:text="TextView"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -57,7 +59,6 @@
         android:id="@+id/textView10"
         android:layout_width="234dp"
         android:layout_height="40dp"
-        android:text="TextView"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -69,7 +70,8 @@
         android:id="@+id/button18"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button"
+        android:text="MENU"
+        app:icon="@drawable/ic_return"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -80,7 +82,6 @@
         android:id="@+id/textView11"
         android:layout_width="117dp"
         android:layout_height="48dp"
-        android:text="TextView"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"

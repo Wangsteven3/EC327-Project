@@ -2,8 +2,11 @@ package com.example.sleeptest;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import androidx.constraintlayout.widget.ConstraintLayout;
+
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -20,6 +23,15 @@ public class memory3b extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.memory3b);
+
+        //gradient background animation
+        ConstraintLayout app = findViewById(R.id.mem3bLayout);
+        AnimationDrawable gradientBackground = (AnimationDrawable) app.getBackground();
+        gradientBackground.setEnterFadeDuration(1000);
+        gradientBackground.setExitFadeDuration(5000);
+        gradientBackground.start();
+
+
         //creation of the buttons
 
         //Declaration of variables
