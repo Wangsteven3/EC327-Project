@@ -14,13 +14,6 @@ public class Scores {
     @ColumnInfo(name = "Total Score")
     private int totalScore;
 
-    @ColumnInfo(name = "Memory Score")
-    private int memScore;
-    @ColumnInfo(name = "Simon Score")
-    private int simonScore;
-    @ColumnInfo(name = "Math Score")
-    private int mathScore;
-
     public Scores(String dateTime, int totalScore) {
         this.dateTime = dateTime;
         this.totalScore = totalScore;
