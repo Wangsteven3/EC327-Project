@@ -100,7 +100,10 @@ public class Math extends AppCompatActivity{
                 @Override
                 public void onClick(View v) {
                     if(!answered){
-                        if(rightbutton == 0) summarytext = "Correct!";
+                        if(rightbutton == 0){
+                            summarytext = "Correct!";
+                            correct++;
+                        }
                         else summarytext = "Incorrect, the correct answer is " + rightanswer;
                         timer.cancel();
                         answered = true;
@@ -113,7 +116,10 @@ public class Math extends AppCompatActivity{
                 @Override
                 public void onClick(View v) {
                     if(!answered){
-                        if(rightbutton == 1) summarytext = "Correct!";
+                        if(rightbutton == 1){
+                            summarytext = "Correct!";
+                            correct++;
+                        }
                         else summarytext = "Incorrect, the correct answer is " + rightanswer;
                         timer.cancel();
                         answered = true;
@@ -127,7 +133,10 @@ public class Math extends AppCompatActivity{
                 @Override
                 public void onClick(View v) {
                     if(!answered){
-                        if(rightbutton == 2) summarytext = "Correct!";
+                        if(rightbutton == 2){
+                            summarytext = "Correct!";
+                            correct++;
+                        }
                         else summarytext = "Incorrect, the correct answer is " + rightanswer;
                         timer.cancel();
                         answered = true;
@@ -140,7 +149,10 @@ public class Math extends AppCompatActivity{
                 @Override
                 public void onClick(View v) {
                     if(!answered){
-                        if(rightbutton == 3) summarytext = "Correct!";
+                        if(rightbutton == 3){
+                            summarytext = "Correct!";
+                            correct++;
+                        }
                         else summarytext = "Incorrect, the correct answer is " + rightanswer;
                         timer.cancel();
                         answered = true;
