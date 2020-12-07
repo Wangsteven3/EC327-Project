@@ -20,6 +20,7 @@
         android:layout_marginRight="98dp"
         android:layout_marginBottom="247dp"
         android:text="back to main menu"
+        app:icon="@drawable/ic_return"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -115,18 +116,19 @@
         app:layout_constraintHorizontal_bias="0.95"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.023"/>
+        app:layout_constraintVertical_bias="0.023"
+        app:strokeWidth="2dp" />
 
-    <Button
-        android:id="@+id/repeatSimon"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="repeat"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.95"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.023" />
+<!--    <Button-->
+<!--        android:id="@+id/repeatSimon"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="repeat"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.95"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:layout_constraintVertical_bias="0.023" />-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

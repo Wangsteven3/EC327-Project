@@ -1,15 +1,15 @@
 package com.example.sleeptest;
 
 import android.content.Intent;
+import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.os.CountDownTimer;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-import org.w3c.dom.Text;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import java.util.Random;
 
@@ -36,6 +36,13 @@ public class Math extends AppCompatActivity{
             TextView countdown = (TextView) findViewById(R.id.countdown);
             TextView summary = (TextView) findViewById(R.id.summary);
             correct = 0;
+
+            //gradient background animation
+            ConstraintLayout app = findViewById(R.id.mathLayout);
+            AnimationDrawable gradientBackground = (AnimationDrawable) app.getBackground();
+            gradientBackground.setEnterFadeDuration(1000);
+            gradientBackground.setExitFadeDuration(3000);
+            gradientBackground.start();
 
             int operation = rand.nextInt(4); //add = 0, sub = 1, mul = 2, div = 3
             if(operation == 0 || operation == 1){
