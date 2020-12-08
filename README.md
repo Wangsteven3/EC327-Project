@@ -17,7 +17,8 @@ Run /app/src/main/java/com/example/sleeptest/MainActivity.java
 
 </br>
 
-**App** </br>
-![Alt text](https://i.imgur.com/j18PmgC.jpg?1)
 
 ![Alt text](https://i.imgur.com/hLJKRPd.png)
+
+</br>**App** 
+![Alt text](https://i.imgur.com/j18PmgC.jpg?1)
