@@ -9,11 +9,11 @@ Instructions:
 Run /app/src/main/java/com/example/sleeptest/MainActivity.java
 
 
-**Members:
-</br> *Project Lead: Tom Panenko
-</br> *Interface Lead: Stephen Wang
-</br> *Technical Lead: David Liu 
-</br> *Specification Lead: Alex Lee**
+**Members:**
+</br> -Project Lead: Tom Panenko
+</br> -Interface Lead: Stephen Wang
+</br> -Technical Lead: David Liu 
+</br> -Specification Lead: Alex Lee
 
 </br>
 
