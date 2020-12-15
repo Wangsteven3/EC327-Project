@@ -54,6 +54,7 @@ public class memory3 extends AppCompatActivity {
         Button seven = (Button) findViewById(R.id.button7);
         Button eight = (Button) findViewById(R.id.button8);
         Button nine = (Button) findViewById(R.id.button9);
+        Button repeat = (Button) findViewById(R.id.restart);
 
         Button back = (Button) findViewById(R.id.main);
         Button submission = (Button) findViewById(R.id.answer);
@@ -83,8 +84,9 @@ public class memory3 extends AppCompatActivity {
         if(yellowcounter != 0)
             numpossibilities[3] = 3;
 
-        while(numpossibilities[j] == 0 && redcounter == 0) //here we use j to loop through, as long as j != 0 and redcounter doesn't equal 0 we increase j
-            j++;
+        //while(numpossibilities[j] == 0 && redcounter == 0) //here we use j to loop through, as long as j != 0 and redcounter doesn't equal 0 we increase j
+            //j++;
+        j  = (short) b1;
 
 
         //following sets all the colors of the buttons with if statements
@@ -631,6 +633,14 @@ public class memory3 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent startIntent = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(startIntent);
+            }
+        });
+
+        repeat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent startIntent = new Intent(getApplicationContext(), memory3.class);
                 startActivity(startIntent);
             }
         });
